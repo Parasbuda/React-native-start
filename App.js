@@ -13,13 +13,13 @@ import {
   Platform
 } from "react-native";
 
-import {useDimensions,useDeviceOrientation} from "@react-native-community/hooks"
+// import {useDimensions,useDeviceOrientation} from "@react-native-community/hooks"
 
 export default function App() {
   // const handlePress = () => console.log("Text clicked");
   
-  const {landscape}=useDeviceOrientation()
-  console.log(landscape)
+  // const {landscape}=useDeviceOrientation()
+  // console.log(landscape)
   return (
     <View style={styles.container}>
       {/* <Text numberOfLines={1} onPress={handlePress}>
@@ -51,9 +51,14 @@ export default function App() {
           style={{ height: 90, width: 200, backgroundColor: "dodgerblue" }}
         ></View>
       </TouchableNativeFeedback> */}
-      <View style={{backgroundColor:"blue",width:"100%",height:landscape?"100%":"30%"}}>
+      {/* <View style={{backgroundColor:"blue",width:"100%",height:landscape?"100%":"30%"}}>
       
-      </View>
+      </View> */}
+      <View style={{backgroundColor:"blue",width:100,height:100}}/>
+      <View style={{backgroundColor:"gold",width:100,height:100 }}/>
+      <View style={{backgroundColor:"tomato",width:100,height:100}}/>
+      {/* <View style={{backgroundColor:"grey",width:100,height:100}}/> */}
+      {/* <View style={{backgroundColor:"green",width:100,height:100}}/> */}
     </View>
   );
 }
@@ -61,7 +66,12 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "orange",
+    backgroundColor: "#fff",
     paddingTop:Platform.OS==="android"?StatusBar.currentHeight:0,
+    flexDirection:"row",
+    justifyContent:"center",
+    alignItems:"center",
+    // flexWrap:"wrap",
+    // alignContent:"center"
   },
 });
